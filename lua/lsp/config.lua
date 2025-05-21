@@ -1,0 +1,46 @@
+-- Ensure mason and lspconfig are set up
+-- require("mason").setup()
+-- require("mason-lspconfig").setup()
+--
+-- local lspconfig = require("lspconfig")
+--
+-- -- Automatically configure installed LSP servers
+-- require("mason-lspconfig").setup_handlers({
+--   function(server_name)
+--     lspconfig[server_name].setup({
+--       on_attach = function(client, bufnr)
+--         -- Optional LSP keybindings
+--         vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to definition" })
+--         vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "Hover" })
+--         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code action" })
+--       end,
+--       capabilities = vim.lsp.protocol.make_client_capabilities(), -- No extra capabilities needed for mini.completion
+--       flags = { debounce_text_changes = 150 },
+--     })
+--   end,
+-- })
+--
+-- -- Set omnifunc for mini.completion
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   callback = function(args)
+--     vim.bo[args.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
+--   end,
+-- })
+--
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+--
+-- -- Configure lua_ls (Lua LSP server)
+-- require('lspconfig').lua_ls.setup({
+--   capabilities = capabilities,
+--   settings = {
+--     Lua = {
+--       diagnostics = { globals = { 'vim' } }, -- Recognize Vim globals
+--     },
+--   },
+-- })
+--
+-- Add more servers as needed, e.g., pyright for Python
+-- require('lspconfig').pyright.setup({
+--   capabilities = capabilities,
+-- })
+
